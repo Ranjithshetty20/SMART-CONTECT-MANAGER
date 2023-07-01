@@ -29,7 +29,10 @@
 
 ![SCM_ENTER_NEW_PASSWORD](https://github.com/Ranjithshetty20/SMART-CONTECT-MANAGER/assets/118193671/94e013ea-3896-4512-8438-96dc403fda23)
 
-![SCM_PASSWORD_CHANGED_MESSAGE(https://github.com/Ranjithshetty20/SMART-CONTECT-MANAGER/assets/118193671/d183cb2f-38cc-40bc-ba48-accbe620c6e8)
+![SCM_PASSWORD_CHANGED_MESSAGE](https://github.com/Ranjithshetty20/SMART-CONTECT-MANAGER/assets/118193671/bb1f5e74-ec5d-4812-83d9-306730679f41)
+
+
+
 
 
 
