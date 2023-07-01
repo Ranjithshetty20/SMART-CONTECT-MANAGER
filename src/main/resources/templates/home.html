@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<section class="banner d-flex">
+<div style="display: flex; align-items: center; flex-direction:column;">
+<h1 th:text="${tital}"></h1>
+<p class="home-text">This is a Smart Contect Manager Web Apllication Where You can Save Your Loved Ones Contect And Much More</p>
+
+<form action="" th:action="@{/signin}">
+<button type="submit" class="login-button">Login</button>
+</form>
+</div>
+</section>
+
+</body>
+</html>

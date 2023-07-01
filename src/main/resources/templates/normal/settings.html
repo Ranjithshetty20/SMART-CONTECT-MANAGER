@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+<div class="confirm-input-continer">
+<h1 style="text-align: center;">Change Password</h1>
+<div th:if="${session.message}" th:classappend="${session.message.type}"  class="form-alert d-flex" role="alert">
+<p th:text="${session.message.content}"></p>
+<th:block th:text="${@sessionHelper.sessionHelperMethod()}" ></th:block>
+</div>
+
+<form action="" th:action="@{/user/changepassword}" method="post">
+
+<input class="confirm-input" type="text" name="oldPassword" placeholder="Enter OldPassword">
+<input class="confirm-input" type="text" name="newPassword" placeholder="Enter Newpassword" >
+
+<div class="confirm-button">
+ 
+ <button type="submit" class="delete-button">Change</button>
+ <button type="reset" class="update-button">Reset</button>
+ 
+ </div>
+</div>
+
+</form>
+
+
+
+
+
+</section>
+</body>
+</html>

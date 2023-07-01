@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="contects-form d-flex">
+<div class="contects-form1">
+<div  th:if="${session.message}" th:classappend="${session.message.type}" class="form-alert d-flex form-alert-green" role="alert">
+<p th:text="${session.message.content}"></p>
+<th:block th:text="${@sessionHelper.sessionHelperMethod()}" ></th:block>
+</div>
+<!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->
+<h1 th:text="${tital}"></h1>
+<form action=""
+th:object="${contects}"
+enctype="multipart/form-data"
+method="post"
+th:action="@{/user/process-contect}"
+>
+<p>Name</p>
+<input type="text" name="name"  placeholder="Enter Your Name">
+<p>Second Name</p>
+<input type="text" name="nickName"   placeholder="Enter your NickName">
+<p>Phone</p>
+<input type="text" name="phone"   placeholder="Enter your Phone Number">
+<p>Work</p>
+<input type="text" name="work"   placeholder="Current Job">
+<p>Email</p>
+<input type="email" name="email" placeholder="Enter Email">
+<p></p>
+<textarea name="description" rows="10" cols="37"  placeholder="About Content">
+</textarea>
+<p></p>
+<input type="file" name="profileimage">
+<p></p>
+<button class="update-button" type="submit">Save Contects</button>
+</form>
+</div>
+</section>
+</body>
+</html>

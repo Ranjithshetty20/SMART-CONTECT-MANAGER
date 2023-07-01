@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+<div class="register-form">
+<form action="" th:action="@{/register_form}" th:object="${user}"  th:method="post">
+<div th:if="${session.message}" th:classappend="${session.message.type}"  class="form-alert d-flex" role="alert">
+<p th:text="${session.message.content}"></p>
+<th:block th:text="${@sessionHelper.sessionHelperMethod()}" ></th:block>
+</div>
+<h1 th:text="${tital}"></h1>
+<p>Full Name</p>
+<input class="input1" th:classappend="${#fields.hasErrors('name')} ? 'invalid-input':'valid-input'"  type="text" th:value="${user.name}" name="name" placeholder="Full Name">
+<div class="input-error" th:each="e : ${#fields.errors('name')}" th:text="${e}" >
+
+</div>
+<p>Email</p>
+<input  class="input1" th:classappend="${#fields.hasErrors('email')} ? 'invalid-input':'valid-input'" type="email" th:value="${user.email}" name="email" placeholder="Enter Email">
+<div class="input-error" th:each="e : ${#fields.errors('email')}" th:text="${e}" ></div>
+
+<p>password</p>
+<input class="input1" th:classappend="${#fields.hasErrors('password')} ? 'invalid-input':'valid-input'" type="password" th:value="${user.password}" name="password" placeholder="Enter Password">
+<div class="input-error" th:each="e : ${#fields.errors('password')}" th:text="${e}" ></div>
+
+<textarea style="display: block; margin-top: 20px;" th:text="${user.about}" name="about" placeholder="Description" rows="6" cols="33"></textarea>
+<p></p>
+<p></p>	
+<div style="display: flex;justify-content: center;align-items: center;">
+<button style="background: #009688;" type="submit">Update</button>
+<button style="background: #006573;" type="reset">Reset</button>
+</div>
+</form>
+</div>
+
+
+</section>
+</body>
+</html>

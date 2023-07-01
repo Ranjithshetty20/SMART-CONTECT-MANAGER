@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section>
+
+<div class="show-details-continer" th:if="${contect}">
+<h1 th:text="${tital}"></h1>
+
+<img alt=" " style="width: 250px; border-radius: 200px" th:src="@{'/image/' + ${contect.image}}" src="">
+
+<h1 style="text-align: center;"><span th:text="${contect.name}">(<span th:text="${contect.nickName}"></span>)</span> </h1>
+
+
+<div class="show-details-table" >
+
+<div class="show-details-box">
+<div class="show-details-content">#ID</div>
+<div class="show-details-content" th:text="${contect.cId}"></div>
+</div>
+
+<div class="show-details-box">
+<div class="show-details-content">name</div>
+<div class="show-details-content" th:text=${contect.name}></div>
+</div>
+<div class="show-details-box">
+<div class="show-details-content">phone</div>
+<div class="show-details-content" th:text=${contect.phone}></div>
+</div>
+<div class="show-details-box">
+<div class="show-details-content">work</div>
+<div class="show-details-content" th:text=${contect.work}></div>
+</div>
+</div>
+<div style="margin-top: 20px; width: 400px" th:text="${contect.description}">
+</div>
+
+<div style="margin-top: 20px; margin-bottom: 20px;">
+ <a th:href="@{'/user/delete-contect/' + ${contect.cId}}" class='delete-button'>Delete</a>
+ 
+ <a th:href="@{'/user/update-contect/'+ ${contect.cId}}" class="update-button">Update</a>
+ 
+</div>
+</div>
+<div class="show-details-continer" style="background: red; font-size: 20px; margin: 10px;"  th:unless="${contect}">
+
+ILLEGAL CONTECT CONTECT CANNOT BE FOUND
+</div>
+
+</section>
+</body>
+</html>

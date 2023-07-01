@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<section class="contects-form d-flex">
+<div class="contects-form1">
+<!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->
+
+<h1 th:text="${tital}"></h1>
+
+<form action=""
+th:object="${contect}"
+enctype="multipart/form-data"
+method="post"
+th:action="@{/user/process-update}"
+>
+<input type="hidden"  th:value="${contect.cId}" name="cId" >
+<p>Name</p>
+<input th:value="${contect.name}" type="text" name="name"  placeholder="Enter Your Name">
+<p>Second Name</p>
+<input th:value="${contect.nickName}" type="text" name="nickName"   placeholder="Enter your nickName">
+<p>Phone</p>
+<input  th:value="${contect.phone}" type="text" name="phone"   placeholder="Enter your Phone Number">
+<p>Work</p>
+<input  th:value="${contect.work}" type="text" name="work"   placeholder="Current job">
+<p>Email</p>
+<input  th:value="${contect.email}" type="email" name="email" placeholder="Enter Email">
+<p></p>
+<textarea th:text="${contect.description}" name="description" rows="10" cols="31"  placeholder="About Content">
+</textarea>
+<p></p>
+<img alt="" th:src="@{'/image/'+${contect.image}}">
+<p></p>
+<input type="file" name="profileimage">
+<p></p>
+<button style="background: #009688; display: block;" type="submit">save contect</button>
+
+</form>
+</div>
+</section>
+</body>
+</html>
